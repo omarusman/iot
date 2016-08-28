@@ -1,4 +1,5 @@
 # pip3 install -U python-dotenv
+import os
 from dotenv import load_dotenv, find_dotenv
 load_dotenv(find_dotenv())
 
