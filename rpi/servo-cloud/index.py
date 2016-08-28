@@ -30,6 +30,13 @@ def rotate(degree):
     PWM.ChangeDutyCycle(DC)
     time.sleep(0.05)
 
+# Make sure message can be rerpresented in a float.
+def getValue(message):
+    try:
+        return float(message)
+    except ValueError:
+        pass
+
 # Go something
 def callback(message, channel):
     print(message)
