@@ -29,4 +29,4 @@ def disconnect(message):
     print("DISCONNECTED")
 
 
-pubnub.subscribe(channels='my_channel', callback=callback, error=callback, connect=connect, reconnect=reconnect, disconnect=disconnect)
+pubnub.subscribe(channels=os.environ.get("PUBNUB_CHANNEL"), callback=callback, error=callback, connect=connect, reconnect=reconnect, disconnect=disconnect)
