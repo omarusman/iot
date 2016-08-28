@@ -33,8 +33,15 @@ def rotate(degree):
 # Make sure message can be rerpresented in a float.
 def getValue(message):
     try:
-        return float(message)
+        value = float(message)
+
+        if(value >= 0. AND value <= 180.) return value
+
+        return value = 0
+        
     except ValueError:
+        pass
+    except TypeError:
         pass
 
 # Go something
