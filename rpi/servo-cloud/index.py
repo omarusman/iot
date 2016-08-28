@@ -35,10 +35,12 @@ def getValue(message):
     try:
         value = float(message)
 
-        if(value >= 0. AND value <= 180.) return value
+        if(value <= 0.) return 0
 
-        return value = 0
-        
+        if(value > 180.) return 180
+
+        return value
+
     except ValueError:
         pass
     except TypeError:
