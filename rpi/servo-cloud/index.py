@@ -25,23 +25,23 @@ PWM = GPIO.PWM(CONTROL_PIN, HERTZ)
 PWM.start(7)
 
 # Rotate the servo in a specific degrees.
-def rotate(degree):
+def rotateServo(degree):
     DC = 1./18. * (degree) + 2
     PWM.ChangeDutyCycle(DC)
     time.sleep(0.05)
 
 # Make sure message can be rerpresented in a float.
-def getValue(message):
+def rotate(message):
     try:
-        value = float(message)
+        value = int(message)
 
-        if value <= 0.:
-            return 0.
+        if value <= 0:
+            return 0
 
-        if value > 180. :
-            return 180.
+        if value > 180 :
+            return 180
 
-        return value
+        rotateServo(value)
 
     except ValueError:
         pass
@@ -52,8 +52,8 @@ def getValue(message):
 def callback(message, channel):
     print(message)
 
-    degree = getValue(message)
-    rotate(degree)
+    rotate(message)
+
 
 # Oops, oh no!
 def error(message):
