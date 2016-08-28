@@ -18,7 +18,7 @@ def error(message):
 # Hooray!
 def connect(message):
     print("CONNECTED")
-    print pubnub.publish(channel=os.environ.get("PUBNUB_CHANNEL"), message='Hello from the PubNub Python SDK')
+    print(pubnub.publish(channel=os.environ.get("PUBNUB_CHANNEL"), message='Hello from the PubNub Python SDK'))
 
 # Reconnected, hooray!
 def reconnect(message):
