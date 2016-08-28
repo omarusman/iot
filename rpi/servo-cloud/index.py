@@ -41,7 +41,7 @@ def getValue(message):
 def callback(message, channel):
     print(message)
 
-    degree = float(message)
+    degree = getValue(message)
     rotate(degree)
 
 # Oops, oh no!
