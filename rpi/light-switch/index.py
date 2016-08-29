@@ -45,6 +45,7 @@ def rotate(message):
         if value == "on" :
             rotateServo(ON)
 
+        time.sleep(1)
         rotateServo(WAIT)
 
     except ValueError:
